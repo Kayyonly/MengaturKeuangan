@@ -23,14 +23,12 @@ export default function ProfilePage() {
       <div className="flex flex-col items-center mt-2 mb-8 shrink-0">
         <div className="relative">
           <div className="w-28 h-28 rounded-full border-2 border-zinc-800 overflow-hidden relative">
-             {/* Pastikan file foto ada di folder public */}
              <img 
                src="/profile.jpg" 
                alt="Profile"
                className="w-full h-full object-cover"
              />
           </div>
-          {/* Camera Icon Badge */}
           <button className="absolute bottom-0 right-0 bg-card p-2 rounded-full border border-zinc-800 text-white hover:text-primary transition-colors shadow-lg">
              <Camera size={16} />
           </button>
@@ -43,7 +41,7 @@ export default function ProfilePage() {
         </button>
       </div>
 
-      {/* 3. Tab Switcher (Personal / Channel) */}
+      {/* 3. Tab Switcher */}
       <div className="px-6 mb-6 shrink-0">
         <div className="bg-zinc-900/50 p-1 rounded-xl flex border border-zinc-800">
           <button
@@ -65,14 +63,11 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/* 4. Content Area (Scrollable) */}
+      {/* 4. Content Area */}
       <div className="flex-1 overflow-y-auto no-scrollbar px-6 pb-32">
         
-        {/* TAB PERSONAL INFO */}
         {activeTab === 'personal' && (
           <div className="bg-card rounded-[24px] border border-zinc-800/50 overflow-hidden">
-             
-             {/* Item: Email */}
              <div className="p-5 border-b border-zinc-800/50 flex gap-4 items-center group hover:bg-white/[0.02] transition-colors">
                 <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 shrink-0">
                    <Mail size={18} />
@@ -83,7 +78,6 @@ export default function ProfilePage() {
                 </div>
              </div>
 
-             {/* Item: Phone */}
              <div className="p-5 border-b border-zinc-800/50 flex gap-4 items-center group hover:bg-white/[0.02] transition-colors">
                 <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 shrink-0">
                    <Phone size={18} />
@@ -94,7 +88,6 @@ export default function ProfilePage() {
                 </div>
              </div>
 
-             {/* Item: Website/Skype */}
              <div className="p-5 border-b border-zinc-800/50 flex gap-4 items-center group hover:bg-white/[0.02] transition-colors">
                 <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 shrink-0">
                    <Globe size={18} />
@@ -105,7 +98,6 @@ export default function ProfilePage() {
                 </div>
              </div>
 
-             {/* Item: Location */}
              <div className="p-5 flex gap-4 items-center group hover:bg-white/[0.02] transition-colors">
                 <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 shrink-0">
                    <MapPin size={18} />
@@ -115,35 +107,32 @@ export default function ProfilePage() {
                    <p className="text-sm text-white font-medium">batam, Indonesia</p>
                 </div>
              </div>
-
           </div>
         )}
 
-        {/* TAB JOIN CHANNEL */}
         {activeTab === 'channel' && (
           <div className="space-y-4">
-             {/* Channel Card */}
              <div className="bg-card p-6 rounded-[24px] border border-zinc-800 text-center relative overflow-hidden group">
-                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                  
-                 <div className="w-16 h-16 bg-zinc-900 rounded-2xl mx-auto flex items-center justify-center mb-4 text-primary border border-zinc-800 shadow-lg">
+                 <div className="w-16 h-16 bg-zinc-900 rounded-2xl mx-auto flex items-center justify-center mb-4 text-primary border border-zinc-800 shadow-lg relative z-10">
                     <Users size={32} />
                  </div>
                  
-                 <h3 className="text-white font-bold text-lg mb-2">Kayy Official Portfolio</h3>
-                 <p className="text-zinc-500 text-xs mb-6 px-4 leading-relaxed">
+                 <h3 className="text-white font-bold text-lg mb-2 relative z-10">Kayy Official Portfolio</h3>
+                 <p className="text-zinc-500 text-xs mb-6 px-4 leading-relaxed relative z-10">
                     Melihat project, pengalaman, dan karya-karya saya sebagai developer, serta kesempatan untuk berkolaborasi dan belajar bersama.
                  </p>
                  
-                 {/* TOMBOL GABUNG YANG SUDAH DIGANTI LINK */}
-                 <a 
-                    href="https://whatsapp.com/channel/0029VbAA4zXDjiOYhXwfm13d"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 group-hover:border-primary/50 group-hover:text-primary cursor-pointer"
+                 {/* TOMBOL FIX */}
+                 <button 
+                    onClick={() => {
+                      window.open('https://kayydev.netlify.app/', '_blank', 'noopener,noreferrer');
+                    }}
+                    className="w-full py-3 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 group-hover:border-primary/50 group-hover:text-primary cursor-pointer relative z-10"
                  >
                     <ExternalLink size={16} /> Lihat Sekarang
-                 </a>
+                 </button>
              </div>
           </div>
         )}
