@@ -4,7 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwind-css)
 
-**Kayy Finance** adalah aplikasi web pelacak keuangan pribadi yang modern dan minimalis. Aplikasi ini membantu kamu mengelola pemasukan, pengeluaran, target tabungan, dan analisis keuangan dalam satu tempat.
+**Kayy Finance** adalah aplikasi web keuangan pribadi yang modern dan minimalis. Aplikasi ini membantu kamu mengelola pemasukan, pengeluaran, target tabungan, dan analisis keuangan dalam satu tempat.
 
 ---
 
